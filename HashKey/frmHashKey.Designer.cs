@@ -65,6 +65,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -184,7 +185,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1025, 174);
+            this.dataGridView1.Size = new System.Drawing.Size(1025, 172);
             this.dataGridView1.TabIndex = 0;
             // 
             // splitContainer1
@@ -205,20 +206,21 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(1045, 679);
-            this.splitContainer1.SplitterDistance = 252;
+            this.splitContainer1.SplitterDistance = 251;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 9;
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1041, 248);
+            this.tabControl2.Size = new System.Drawing.Size(1041, 247);
             this.tabControl2.TabIndex = 9;
             // 
             // tabPage4
@@ -237,7 +239,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(1033, 219);
+            this.tabPage4.Size = new System.Drawing.Size(1033, 218);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "手动输入";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -342,11 +344,10 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1033, 220);
+            this.tabPage3.Size = new System.Drawing.Size(1033, 218);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "导入EXCEL表";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Parent = null;
             // 
             // tabControl1
             // 
@@ -360,7 +361,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 418);
+            this.tabControl1.Size = new System.Drawing.Size(1041, 419);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -371,7 +372,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 389);
+            this.tabPage1.Size = new System.Drawing.Size(1033, 390);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "格式解读";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -384,7 +385,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(4, 48);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(1025, 337);
+            this.richTextBox2.Size = new System.Drawing.Size(1025, 338);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
@@ -454,7 +455,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1033, 388);
+            this.tabPage2.Size = new System.Drawing.Size(1033, 389);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "格式解读";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -467,9 +468,19 @@
             this.richTextBox1.Location = new System.Drawing.Point(4, 4);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1025, 380);
+            this.richTextBox1.Size = new System.Drawing.Size(1025, 381);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1033, 218);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "文件校验";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // frmHashKey
             // 
@@ -540,6 +551,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button butUpdateFile;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 
