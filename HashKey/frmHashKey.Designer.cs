@@ -346,6 +346,7 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "导入EXCEL表";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Parent = null;
             // 
             // tabControl1
             // 
