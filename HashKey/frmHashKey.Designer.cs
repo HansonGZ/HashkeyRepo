@@ -53,6 +53,9 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -65,7 +68,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,6 +79,7 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -185,7 +190,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1025, 172);
+            this.dataGridView1.Size = new System.Drawing.Size(1025, 171);
             this.dataGridView1.TabIndex = 0;
             // 
             // splitContainer1
@@ -206,7 +211,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(1045, 679);
-            this.splitContainer1.SplitterDistance = 251;
+            this.splitContainer1.SplitterDistance = 312;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -220,7 +225,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1041, 247);
+            this.tabControl2.Size = new System.Drawing.Size(1041, 308);
             this.tabControl2.TabIndex = 9;
             // 
             // tabPage4
@@ -239,9 +244,9 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(1033, 218);
+            this.tabPage4.Size = new System.Drawing.Size(1033, 279);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "手动输入";
+            this.tabPage4.Text = "文件更新";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // textBox4
@@ -336,6 +341,39 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Customer IP:";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.textBox7);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.textBox1);
+            this.tabPage5.Controls.Add(this.label3);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1033, 279);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "文件校验";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(126, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(685, 25);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Enter += new System.EventHandler(this.Textbox1_Enter);
+            this.textBox1.MouseLeave += new System.EventHandler(this.Textbox1_Enter);
+            this.textBox1.MouseHover += new System.EventHandler(this.Textbox1_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "校验字节：";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView1);
@@ -344,7 +382,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1033, 218);
+            this.tabPage3.Size = new System.Drawing.Size(1033, 217);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "导入EXCEL表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -361,7 +399,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 419);
+            this.tabControl1.Size = new System.Drawing.Size(1041, 358);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -372,7 +410,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 390);
+            this.tabPage1.Size = new System.Drawing.Size(1033, 329);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "格式解读";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -385,7 +423,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(4, 48);
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(1025, 338);
+            this.richTextBox2.Size = new System.Drawing.Size(1025, 277);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
@@ -455,7 +493,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1033, 389);
+            this.tabPage2.Size = new System.Drawing.Size(1033, 391);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "格式解读";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -468,19 +506,25 @@
             this.richTextBox1.Location = new System.Drawing.Point(4, 4);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1025, 381);
+            this.richTextBox1.Size = new System.Drawing.Size(1025, 383);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // tabPage5
+            // label9
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1033, 218);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "文件校验";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "已包含字节：";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(126, 71);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(685, 25);
+            this.textBox7.TabIndex = 3;
             // 
             // frmHashKey
             // 
@@ -505,6 +549,8 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -552,6 +598,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button butUpdateFile;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
 

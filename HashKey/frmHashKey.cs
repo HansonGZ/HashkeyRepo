@@ -14,7 +14,7 @@ namespace HashKey
     public partial class frmHashKey : Form
     {
         private clsHashKeyList gobjHashKeyList;
-
+        private string textbox1Note = "请输入待校验的字节，以英文逗号,分开";
         System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
             string dllName = args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(',')) : args.Name.Replace(".dll", "");
@@ -471,6 +471,24 @@ namespace HashKey
             UpdateHashFileByUserInput(this.txtEditFile2.Text, objFileUpdateHash);    //根据user填的数据来更新目标文件
 
             MessageBox.Show("更新成功！");
+        }
+
+        private void Textbox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == textbox1Note)
+            {
+                textBox1.Text = "";
+            }
+            textBox1.ForeColor = Color.Black;
+        }
+
+        private void Textbox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = textbox1Note;
+                textBox1.ForeColor = Color.LightGray;
+            }
         }
     }
 
