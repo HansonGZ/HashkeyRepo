@@ -1,0 +1,15 @@
+#define INPUT_CUSTOMER_ID_LOW_BYTE  <%INPUT_CUSTOMER_ID_LOW_BYTE%>
+#define INPUT_CUSTOMER_ID_HIGH_BYTE <%INPUT_CUSTOMER_ID_HIGH_BYTE%>
+#define INPUT_MODEL_ID_LOW_BYTE     <%INPUT_MODEL_ID_LOW_BYTE%>
+#define INPUT_MODEL_ID_HIGH_BYTE    <%INPUT_MODEL_ID_HIGH_BYTE%>
+#define INPUT_CHIP_ID_LOW_BYTE      <%INPUT_CHIP_ID_LOW_BYTE%>
+#define INPUT_CHIP_ID_HIGH_BYTE     <%INPUT_CHIP_ID_HIGH_BYTE%>
+#define INPUT_DOLBY_VER_LOW_BYTE    <%INPUT_DOLBY_VER_LOW_BYTE%>
+#define INPUT_DOLBY_VER_HIGH_BYTE   <%INPUT_DOLBY_VER_HIGH_BYTE%>
+#define DRM_MODEL_ID                <%DRM_MODEL_ID%>
+
+static const U8 gconstIP_Cntrol_Mapping_1[] = "<%gconstIP_Cntrol_Mapping_1%>"; //Customer IP Control-1
+static const U8 gconstIP_Cntrol_Mapping_2[] = "<%gconstIP_Cntrol_Mapping_2%>"; //Customer IP Control-2
+static const U8 gconstIP_Cntrol_Mapping_3[] = "<%gconstIP_Cntrol_Mapping_3%>"; //Customer IP Control-3
+static const U8 gconstIP_Cntrol_Mapping_4[] = "<%gconstIP_Cntrol_Mapping_4%>"; //Customer IP Control-4
+static const U8 gconstCustomer_hash[] = <%gconstCustomer_hash%>;
