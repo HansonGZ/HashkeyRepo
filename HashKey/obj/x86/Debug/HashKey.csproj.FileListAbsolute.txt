@@ -29,3 +29,11 @@ D:\visual studio2013\code\1025\HashKey\obj\x86\Debug\HashKey.csprojResolveAssemb
 D:\visual studio2013\code\1025\HashKey\obj\x86\Debug\HashKey.frmHashKey.resources
 D:\visual studio2013\code\1025\HashKey\obj\x86\Debug\HashKey.Properties.Resources.resources
 D:\visual studio2013\code\1025\HashKey\obj\x86\Debug\HashKey.csproj.GenerateResource.Cache
+D:\MyGit\Hashkey\hashkeygit\HashKey\bin\Debug\HashKey.exe
+D:\MyGit\Hashkey\hashkeygit\HashKey\bin\Debug\HashKey.pdb
+D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.csprojResolveAssemblyReference.cache
+D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.frmHashKey.resources
+D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.Properties.Resources.resources
+D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.csproj.GenerateResource.Cache
+D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.exe
+D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.pdb
