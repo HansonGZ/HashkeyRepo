@@ -69,8 +69,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textBox_WaitCheck = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -437,7 +436,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(75, 86);
+            this.textBox9.Location = new System.Drawing.Point(89, 86);
             this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
@@ -451,13 +450,13 @@
             this.label10.Location = new System.Drawing.Point(5, 86);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 17);
+            this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 4;
-            this.label10.Text = "未包含字节:";
+            this.label10.Text = "未包含IP:";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(75, 53);
+            this.textBox7.Location = new System.Drawing.Point(89, 53);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
@@ -471,9 +470,9 @@
             this.label9.Location = new System.Drawing.Point(5, 53);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 17);
+            this.label9.Size = new System.Drawing.Size(67, 17);
             this.label9.TabIndex = 2;
-            this.label9.Text = "已包含字节：";
+            this.label9.Text = "已包含IP：";
             // 
             // panel2
             // 
@@ -481,8 +480,7 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.textBox_WaitCheck);
             this.panel2.Controls.Add(this.label3);
             this.panel2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.panel2.Location = new System.Drawing.Point(3, 5);
@@ -495,65 +493,55 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(4, 49);
+            this.label11.Location = new System.Drawing.Point(5, 11);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 17);
+            this.label11.Size = new System.Drawing.Size(82, 17);
             this.label11.TabIndex = 3;
-            this.label11.Text = "目标文件:";
+            this.label11.Text = "Customer IP:";
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(678, 46);
+            this.button1.Location = new System.Drawing.Point(675, 45);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 26);
+            this.button1.Size = new System.Drawing.Size(94, 25);
             this.button1.TabIndex = 3;
             this.button1.Text = "开始校验";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox8.Location = new System.Drawing.Point(75, 49);
+            this.textBox8.Location = new System.Drawing.Point(88, 11);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(571, 21);
+            this.textBox8.Size = new System.Drawing.Size(577, 21);
             this.textBox8.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBox8, "解释：存放生成KEY的目录路径");
             // 
-            // textBox1
+            // textBox_WaitCheck
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(571, 21);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Enter += new System.EventHandler(this.Textbox1_Enter);
-            this.textBox1.MouseLeave += new System.EventHandler(this.Textbox1_Enter);
-            this.textBox1.MouseHover += new System.EventHandler(this.Textbox1_Leave);
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(651, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(21, 21);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "…";
-            this.toolTip1.SetToolTip(this.button2, "提示：点我，设置新的生存路径！");
-            this.button2.UseVisualStyleBackColor = true;
+            this.textBox_WaitCheck.Location = new System.Drawing.Point(88, 49);
+            this.textBox_WaitCheck.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_WaitCheck.Name = "textBox_WaitCheck";
+            this.textBox_WaitCheck.Size = new System.Drawing.Size(577, 21);
+            this.textBox_WaitCheck.TabIndex = 1;
+            this.textBox_WaitCheck.Enter += new System.EventHandler(this.Textbox1_Enter);
+            this.textBox_WaitCheck.MouseLeave += new System.EventHandler(this.Textbox1_Enter);
+            this.textBox_WaitCheck.MouseHover += new System.EventHandler(this.Textbox1_Leave);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(4, 11);
+            this.label3.Location = new System.Drawing.Point(4, 49);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 17);
+            this.label3.Size = new System.Drawing.Size(83, 17);
             this.label3.TabIndex = 0;
-            this.label3.Text = "待校验字节:";
+            this.label3.Text = "输入校验目标:";
             // 
             // tabPage3
             // 
@@ -707,7 +695,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button butUpdateFile;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_WaitCheck;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox7;
@@ -716,7 +704,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox9;

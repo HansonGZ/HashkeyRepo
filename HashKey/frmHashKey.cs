@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace HashKey
 {
@@ -23,63 +25,6 @@ namespace HashKey
             System.Resources.ResourceManager rm = new System.Resources.ResourceManager(GetType().Namespace + ".Properties.Resources", System.Reflection.Assembly.GetExecutingAssembly());
             byte[] bytes = (byte[])rm.GetObject(dllName);
             return System.Reflection.Assembly.Load(bytes);
-        }
-
-        public frmHashKey()
-        {
-            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
-            InitializeComponent();
-            FillDataGridViewColums(this.dataGridView1);
-        }
-
-        private void butFile1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog objOpenFileDialog = new OpenFileDialog();
-            if (System.IO.File.Exists(this.txtEditFile1.Text))
-            {
-                objOpenFileDialog.FileName = this.txtEditFile1.Text;
-            }
-            objOpenFileDialog.Title = "请选择文件：";
-            objOpenFileDialog.Filter = "Excel(*.xls)|*.xls|Excel(*.xlsx)|*.xlsx"; // |Excel Unicode Text File|*.txt
-            objOpenFileDialog.DefaultExt = ".xls";
-            if (objOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                this.txtEditFile1.Text = objOpenFileDialog.FileName.Trim();
-                string strFilePath = objOpenFileDialog.FileName.Trim().ToUpper();
-                Cursor = Cursors.WaitCursor;
-                try
-                {
-                    gobjHashKeyList = new clsHashKeyList(strFilePath);
-                    if (gobjHashKeyList == null)
-                    {
-                        MessageBox.Show("文件:" + this.txtEditFile1.Text, "非法文件", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    FillDataGridView(this.dataGridView1, gobjHashKeyList.gobjHashKeyList);
-                }
-                catch (Exception ex)
-                {
-                    Cursor = Cursors.Default;
-                    MessageBox.Show("失败原因:[" + ex.Message + "]", "读取文件失败:");
-                }
-
-                Cursor = Cursors.Default;
-            }
-        }
-
-        private void butFile2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog objOpenFileDialog = new OpenFileDialog();
-            if (System.IO.File.Exists(this.txtEditFile1.Text))
-            {
-                objOpenFileDialog.FileName = this.txtEditFile1.Text;
-            }
-            objOpenFileDialog.Title = "请选择文件：";
-            objOpenFileDialog.Filter = "(Customer_Info.h)|Customer_Info.h|Customer_Info(*.h)|*.h"; // |Excel Unicode Text File|*.txt
-            objOpenFileDialog.DefaultExt = ".h";
-            if (objOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                this.txtEditFile2.Text = objOpenFileDialog.FileName.Trim();
-            }
         }
 
         /// <summary>
@@ -227,6 +172,34 @@ namespace HashKey
             }
         }
 
+        private void InitDictionaryForHashkey(Dictionary<string, int> dicHash)
+        {
+            dicHash.Add("BBE Digital", 0); //index = 0;
+
+        }
+        private bool UpdateDictionaryForHashkey(Dictionary<string, int> dicHash, string value)
+        {
+            int i = 0;
+            if(value.Length != 128)
+            {
+                return false;
+            }
+            foreach (string key in dicHash.Keys)
+            {
+                dicHash[key] = value[i++];
+            }
+            return true;
+        }
+
+        private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue)
+        {
+            string[] sArray = tmpvalue.Split(',');
+            foreach (string key in dicHash.Keys)
+            {
+                //dicHash[key] = sArray
+            }
+            return true;
+        }
         private void UpdateHashFileByUserInput(string filename, clsHashKey tmphashkey)
         {            
             string strINPUT_CUSTOMER_ID_LOW_BYTE = "INPUT_CUSTOMER_ID_LOW_BYTE";
@@ -472,22 +445,107 @@ namespace HashKey
 
             MessageBox.Show("更新成功！");
         }
+        public frmHashKey()
+        {
+            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
+            InitializeComponent();
+            FillDataGridViewColums(this.dataGridView1);
+        }
+
+        private void butFile1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog objOpenFileDialog = new OpenFileDialog();
+            if (System.IO.File.Exists(this.txtEditFile1.Text))
+            {
+                objOpenFileDialog.FileName = this.txtEditFile1.Text;
+            }
+            objOpenFileDialog.Title = "请选择文件：";
+            objOpenFileDialog.Filter = "Excel(*.xls)|*.xls|Excel(*.xlsx)|*.xlsx"; // |Excel Unicode Text File|*.txt
+            objOpenFileDialog.DefaultExt = ".xls";
+            if (objOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.txtEditFile1.Text = objOpenFileDialog.FileName.Trim();
+                string strFilePath = objOpenFileDialog.FileName.Trim().ToUpper();
+                Cursor = Cursors.WaitCursor;
+                try
+                {
+                    gobjHashKeyList = new clsHashKeyList(strFilePath);
+                    if (gobjHashKeyList == null)
+                    {
+                        MessageBox.Show("文件:" + this.txtEditFile1.Text, "非法文件", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    FillDataGridView(this.dataGridView1, gobjHashKeyList.gobjHashKeyList);
+                }
+                catch (Exception ex)
+                {
+                    Cursor = Cursors.Default;
+                    MessageBox.Show("失败原因:[" + ex.Message + "]", "读取文件失败:");
+                }
+
+                Cursor = Cursors.Default;
+            }
+        }
+
+        private void butFile2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog objOpenFileDialog = new OpenFileDialog();
+            if (System.IO.File.Exists(this.txtEditFile1.Text))
+            {
+                objOpenFileDialog.FileName = this.txtEditFile1.Text;
+            }
+            objOpenFileDialog.Title = "请选择文件：";
+            objOpenFileDialog.Filter = "(Customer_Info.h)|Customer_Info.h|Customer_Info(*.h)|*.h"; // |Excel Unicode Text File|*.txt
+            objOpenFileDialog.DefaultExt = ".h";
+            if (objOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.txtEditFile2.Text = objOpenFileDialog.FileName.Trim();
+            }
+        }
+
 
         private void Textbox1_Enter(object sender, EventArgs e)
         {
-            if (textBox1.Text == textbox1Note)
+            if (textBox_WaitCheck.Text == textbox1Note)
             {
-                textBox1.Text = "";
+                textBox_WaitCheck.Text = "";
             }
-            textBox1.ForeColor = Color.Black;
+            textBox_WaitCheck.ForeColor = Color.Black;
         }
 
         private void Textbox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox_WaitCheck.Text == "")
             {
-                textBox1.Text = textbox1Note;
-                textBox1.ForeColor = Color.LightGray;
+                textBox_WaitCheck.Text = textbox1Note;
+                textBox_WaitCheck.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog objOpenFileDialog = new OpenFileDialog();
+            if (System.IO.File.Exists(this.txtEditFile1.Text))
+            {
+                objOpenFileDialog.FileName = this.txtEditFile1.Text;
+            }
+            objOpenFileDialog.Title = "请选择文件：";
+            objOpenFileDialog.Filter = "(Customer_Info.h)|Customer_Info.h|Customer_Info(*.h)|*.h"; // |Excel Unicode Text File|*.txt
+            objOpenFileDialog.DefaultExt = ".h";
+            if (objOpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.textBox8.Text = objOpenFileDialog.FileName.Trim();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string CustomerIp = textBox8.Text;
+            string sWaitCheck = textBox_WaitCheck.Text;
+            Dictionary<string, int> dicHash = new Dictionary<string, int>();
+            InitDictionaryForHashkey(dicHash);
+            if(UpdateDictionaryForHashkey(dicHash, CustomerIp) == true)
+            {
+                CheckIPForHashkey(dicHash, sWaitCheck);
             }
         }
     }
