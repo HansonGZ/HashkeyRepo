@@ -37,3 +37,11 @@ D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.Properties.Resources.r
 D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.csproj.GenerateResource.Cache
 D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.exe
 D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.pdb
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\bin\Debug\HashKey.exe
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\bin\Debug\HashKey.pdb
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.csprojResolveAssemblyReference.cache
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.frmHashKey.resources
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.Properties.Resources.resources
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.csproj.GenerateResource.Cache
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.exe
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.pdb
