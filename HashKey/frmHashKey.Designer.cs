@@ -60,6 +60,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -78,7 +79,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_CheckResult = new System.Windows.Forms.TextBox();
             this.panTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -411,6 +412,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.textBox_CheckResult);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox9);
@@ -422,6 +424,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(767, 112);
             this.panel3.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(76, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 12);
+            this.label13.TabIndex = 7;
             // 
             // label12
             // 
@@ -516,7 +526,6 @@
             this.textBox8.BackColor = System.Drawing.SystemColors.Window;
             this.textBox8.Location = new System.Drawing.Point(88, 11);
             this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(577, 21);
             this.textBox8.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBox8, "解释：存放生成KEY的目录路径");
@@ -614,13 +623,13 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // label13
+            // textBox_CheckResult
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(76, 25);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 12);
-            this.label13.TabIndex = 7;
+            this.textBox_CheckResult.Location = new System.Drawing.Point(89, 15);
+            this.textBox_CheckResult.Name = "textBox_CheckResult";
+            this.textBox_CheckResult.ReadOnly = true;
+            this.textBox_CheckResult.Size = new System.Drawing.Size(100, 21);
+            this.textBox_CheckResult.TabIndex = 8;
             // 
             // frmHashKey
             // 
@@ -709,6 +718,7 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox_CheckResult;
     }
 }
 

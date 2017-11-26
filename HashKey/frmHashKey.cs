@@ -175,18 +175,23 @@ namespace HashKey
         private void InitDictionaryForHashkey(Dictionary<string, int> dicHash)
         {
             dicHash.Add("BBE Digital", 0); //index = 0;
-
+            dicHash.Add("BBEVIVA", 0);
+            dicHash.Add("TSXT(SRS)", 0);
+            dicHash.Add("TSHD)", 0);
         }
         private bool UpdateDictionaryForHashkey(Dictionary<string, int> dicHash, string value)
         {
-            int i = 0;
+            int i = 1;
             if(value.Length != 128)
             {
                 return false;
             }
-            foreach (string key in dicHash.Keys)
+            List<string> Templist = new System.Collections.Generic.List<string>();
+            Templist.AddRange(dicHash.Keys);
+            foreach (string t in Templist)
             {
-                dicHash[key] = value[i++];
+                dicHash[t] = Convert.ToInt32(value.Substring(value.Length - i, 1));
+                i = i + 1;
             }
             return true;
         }
@@ -194,9 +199,15 @@ namespace HashKey
         private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue)
         {
             string[] sArray = tmpvalue.Split(',');
-            foreach (string key in dicHash.Keys)
+            for (int i = 0; i < sArray.Length; i++ )
             {
-                //dicHash[key] = sArray
+               if(dicHash.ContainsKey(sArray[i]) == true)
+               {
+                   if(dicHash[sArray[i]] == 0)
+                   {
+                       return false;
+                   }
+               }
             }
             return true;
         }
@@ -502,7 +513,6 @@ namespace HashKey
             }
         }
 
-
         private void Textbox1_Enter(object sender, EventArgs e)
         {
             if (textBox_WaitCheck.Text == textbox1Note)
@@ -539,13 +549,38 @@ namespace HashKey
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int decimalresult = 0;
+            string binaryresult = null;
             string CustomerIp = textBox8.Text;
+            for(int i = 0; i < 4; i++)
+            {
+                decimalresult = Convert.ToInt32(CustomerIp.Substring(i*8, 8), 16);
+                binaryresult += Convert.ToString(decimalresult, 2).PadLeft(32, '0');
+            }
+            //string callback = "";
+            Boolean checkresult = false;
             string sWaitCheck = textBox_WaitCheck.Text;
             Dictionary<string, int> dicHash = new Dictionary<string, int>();
             InitDictionaryForHashkey(dicHash);
-            if(UpdateDictionaryForHashkey(dicHash, CustomerIp) == true)
+            if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)
             {
-                CheckIPForHashkey(dicHash, sWaitCheck);
+                checkresult = CheckIPForHashkey(dicHash, sWaitCheck);
+            }
+            if (checkresult == true)
+            {
+                textBox_CheckResult.Text = "Pass!";
+            }
+            else
+            {
+                textBox_CheckResult.Text = "Fail!";
+            }
+            //if(callback == null)
+            {
+                //MessageBox.Show("更新成功！");
+            }
+            //else
+            {
+                //MessageBox.Show(callback + "不存在！");
             }
         }
     }
