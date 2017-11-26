@@ -16,7 +16,7 @@ namespace HashKey
     public partial class frmHashKey : Form
     {
         private clsHashKeyList gobjHashKeyList;
-        private string textbox1Note = "请输入待校验的字节，以英文逗号,分开";
+
         System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
             string dllName = args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(',')) : args.Name.Replace(".dll", "");
@@ -26,17 +26,12 @@ namespace HashKey
             byte[] bytes = (byte[])rm.GetObject(dllName);
             return System.Reflection.Assembly.Load(bytes);
         }
-
-        /// <summary>
-        /// 填充列
-        /// <summary>
         /// <param name="dgvFillDataObject">DataGridView控件</param>
         private void FillDataGridViewColums(DataGridView dgvFillDataObject)
         {
             if (dgvFillDataObject.DataSource != null) dgvFillDataObject.DataSource = null;
             dgvFillDataObject.Rows.Clear();
             dgvFillDataObject.Columns.Clear();
-
             // Add Link Column
             DataGridViewLinkColumn objdgvColumn5 = new DataGridViewLinkColumn();
             objdgvColumn5.Name = "NewLinkColumn";
@@ -45,8 +40,7 @@ namespace HashKey
             objdgvColumn5.Width = 80;
             objdgvColumn5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvFillDataObject.Columns.Add(objdgvColumn5);
-            // 添加Table列
-            // PartNumber
+            // 添加Table列// PartNumber
             DataGridViewTextBoxColumn objdgvTextBoxColumnPartNumber = new DataGridViewTextBoxColumn();
             objdgvTextBoxColumnPartNumber.Name = "PartNumber";
             objdgvTextBoxColumnPartNumber.HeaderText = "PartNumber";
@@ -89,7 +83,6 @@ namespace HashKey
             objdgvTextBoxColumnCustomerHash.HeaderText = "CustomerHash";
             objdgvTextBoxColumnCustomerHash.Width = 200;
             dgvFillDataObject.Columns.Add(objdgvTextBoxColumnCustomerHash);
-
             // Type
             DataGridViewTextBoxColumn objdgvTextBoxColumnType = new DataGridViewTextBoxColumn();
             objdgvTextBoxColumnType.Name = "Type";
@@ -102,6 +95,137 @@ namespace HashKey
             objdgvTextBoxColumnArea.HeaderText = "Area";
             objdgvTextBoxColumnArea.Width = 200;
             dgvFillDataObject.Columns.Add(objdgvTextBoxColumnArea);
+        }
+        private void InitDictionaryForHashkey(Dictionary<string, int> dicHash)
+        {
+            dicHash.Add("BBE Digital", 0); //index = 0;
+            dicHash.Add("BBEVIVA", 0);
+            dicHash.Add("TSXT(SRS)", 0);
+            dicHash.Add("TSHD", 0);
+            dicHash.Add("SRS TruVolume", 0);
+            dicHash.Add("VDS", 0);
+            dicHash.Add("VSPK", 0);
+            dicHash.Add("DTS_SUR", 0);
+            dicHash.Add("Qsound", 0);
+            dicHash.Add("Audyssey", 0);
+            dicHash.Add("CV3", 0);
+            dicHash.Add("DD", 0);
+            dicHash.Add("DD+", 0);
+            dicHash.Add("DDCO", 0);
+            dicHash.Add("Dolby pulse", 0);
+            dicHash.Add("DTS Dec", 0);
+            dicHash.Add("(Empty)", 0);
+            dicHash.Add("Dolby_THD", 0);
+            dicHash.Add("DTS HD (DTS M6)", 0);
+            dicHash.Add("MPEG2", 0);
+            dicHash.Add("MPEG2_HD", 0);
+            dicHash.Add("MPEG4", 0);
+            dicHash.Add("MPEG4_SD", 0);
+            dicHash.Add("MPEG4_HD", 0);
+            dicHash.Add("DivX-1080P HD", 0);
+            dicHash.Add("DivX_DRM", 0);
+            dicHash.Add("DivX_Plus", 0);
+            dicHash.Add("H.264", 0);
+            dicHash.Add("RM", 0);
+            dicHash.Add("VC1", 0);
+            dicHash.Add("WMA", 0);
+            dicHash.Add("WMDRM_PD", 0);
+            dicHash.Add("WMDRM_ND", 0);
+            dicHash.Add("AVS", 0);
+            dicHash.Add("FLV", 0);
+            dicHash.Add("DivX qMobile", 0);
+            dicHash.Add("DivX Mobile", 0);
+            dicHash.Add("DivX Home Theater", 0);
+            dicHash.Add("DivX 720p HD", 0);
+            dicHash.Add("DVB-C", 0);
+            dicHash.Add("MVC", 0);
+            dicHash.Add("PlayReady", 0);
+            dicHash.Add("Youtube HTML5", 0);
+            dicHash.Add("facebook", 0);
+            dicHash.Add("SC1.2", 0);
+            dicHash.Add("(None)", 0);
+            dicHash.Add("(None1)", 0);
+            dicHash.Add("(None2)", 0);
+            dicHash.Add("VUDU", 0);
+            dicHash.Add("CN - CinemaNow(BestBuy)", 0);
+            dicHash.Add("CN - BlockBuster", 0);
+            dicHash.Add("CN - Film Fresh", 0);
+            dicHash.Add("CN - Sears Alphaline", 0);
+            dicHash.Add("CN - RealD 3D", 0);
+            dicHash.Add("Macrovision", 0);
+            dicHash.Add("SRS StudioSound HD", 0);
+            dicHash.Add("Dolby Volume", 0);
+            dicHash.Add("Dolby DD+ Encode", 0);
+            dicHash.Add("DTS LBR(Express)", 0);
+            dicHash.Add("Empty", 0);
+            dicHash.Add("VP6", 0);
+            dicHash.Add("VP8", 0);
+            dicHash.Add("Ginga-NCL", 0);
+            dicHash.Add("Ginga-J", 0);
+            dicHash.Add("DBX", 0);
+            dicHash.Add("DRA", 0);
+            dicHash.Add("SRS PureSound bit", 0);
+            dicHash.Add("Cineplex", 0);
+            dicHash.Add("Widevine", 0);
+            dicHash.Add("DTS StudioSound 3D", 0);
+            dicHash.Add("GAAC", 0);
+            dicHash.Add("Empty2", 0);
+            dicHash.Add("DTS Neo:Ultra", 0);
+            dicHash.Add("DTS Transcode", 0);
+            dicHash.Add("Zenterio MW control", 0);
+            dicHash.Add("HEVC", 0);
+            dicHash.Add("Flash Access", 0);
+            dicHash.Add("Miracast", 0);
+            dicHash.Add("Rovi_DPS", 0);
+            dicHash.Add("(None3)", 0);
+            dicHash.Add("Dolby_MS11", 0);
+            dicHash.Add("Dolby_MS12_B", 0);
+            dicHash.Add("Dolby_MS12_C", 0);
+            dicHash.Add("Dolby_MS12_LC", 0);
+            dicHash.Add("Dolby reserved bit", 0);
+            dicHash.Add("DivX HEVC 4K", 0);
+            dicHash.Add("DivX HEVC 1080p", 0);
+            dicHash.Add("DivX HEVC 720p", 0);
+            dicHash.Add("Microsoft Smooth Streaming", 0);
+            dicHash.Add("Netflix", 0);
+            dicHash.Add("Merlin", 0);
+            dicHash.Add("VP9", 0);
+            dicHash.Add("SonicEmotion", 0);
+            dicHash.Add("Bongiovi DPS", 0);
+            dicHash.Add("TTS (Cyberon, English)", 0);
+            dicHash.Add("TTS (Cyberon, Spanish)", 0);
+            dicHash.Add("TTS (Cyberon, French)", 0);
+            dicHash.Add("TTS (Cyberon, Portuguese)", 0);
+            dicHash.Add("TTS (Cyberon, Korean)", 0);
+            dicHash.Add("HDCP", 0);
+            dicHash.Add("DTCPIP", 0);
+            dicHash.Add("WiDi", 0);
+            dicHash.Add("H264_HD", 0);
+            dicHash.Add("Know how movies", 0);
+            dicHash.Add("Target Ticket", 0);
+            dicHash.Add("Pandora", 0);
+            dicHash.Add("RVU", 0);
+            dicHash.Add("TTS (Hummer, English)", 0);
+            dicHash.Add("TTS (Hummer, Spanish)", 0);
+            dicHash.Add("Browser Engine (Sraf)", 0);
+            dicHash.Add("HbbTV/FVP Browser (Sraf)", 0);
+            dicHash.Add("HbbTV Engine", 0);
+            dicHash.Add("Open Browser (Sraf)", 0);
+            dicHash.Add("Portal (Sraf)", 0);
+            dicHash.Add("Inview(Middleware)", 0);
+            dicHash.Add("Dolby_MS11 w/o HE-AAC", 0);
+            dicHash.Add("Dolby_MS12-B w/o HE-AAC", 0);
+            dicHash.Add("Dolby_MS12-D w/o HE-AAC", 0);
+            dicHash.Add("DOLBY_HDR", 0);
+            dicHash.Add("MoPA EAD UI", 0);
+            dicHash.Add("Youtube HTML5 (Seraphic YTTV)", 0);
+            dicHash.Add("(None4)", 0);
+            dicHash.Add("(None5)", 0);
+            dicHash.Add("(None6)", 0);
+            dicHash.Add("(None7)", 0);
+            dicHash.Add("(None8)", 0);
+            dicHash.Add("(None9)", 0);
+            dicHash.Add("Dolby Demo(default off)", 0);
         }
         /// <summary>
         /// 填充DataGridView
@@ -172,13 +296,6 @@ namespace HashKey
             }
         }
 
-        private void InitDictionaryForHashkey(Dictionary<string, int> dicHash)
-        {
-            dicHash.Add("BBE Digital", 0); //index = 0;
-            dicHash.Add("BBEVIVA", 0);
-            dicHash.Add("TSXT(SRS)", 0);
-            dicHash.Add("TSHD)", 0);
-        }
         private bool UpdateDictionaryForHashkey(Dictionary<string, int> dicHash, string value)
         {
             int i = 1;
@@ -196,7 +313,7 @@ namespace HashKey
             return true;
         }
 
-        private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue)
+        private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue, ref string callback)
         {
             string[] sArray = tmpvalue.Split(',');
             for (int i = 0; i < sArray.Length; i++ )
@@ -207,6 +324,11 @@ namespace HashKey
                    {
                        return false;
                    }
+               }
+               else
+               {
+                   callback = sArray[i];
+                   return false;    //不存在此键值
                }
             }
             return true;
@@ -436,6 +558,22 @@ namespace HashKey
             objFileUpdateHash.CustomerHash = this.textBox6.Text;
 
             //检查数据的合法性：
+            for (int i = 0; i < objFileUpdateHash.CustomerID.Length; i++)
+            {
+                if (!(objFileUpdateHash.CustomerID[i] >= '0' && objFileUpdateHash.CustomerID[i] <= '9'))
+                {
+                    MessageBox.Show("CustomerID 输入数据不合法！", "ERROR");
+                    return;
+                }
+            }
+            for (int i = 0; i < objFileUpdateHash.ModelID.Length; i++)
+            {
+                if (!(objFileUpdateHash.ModelID[i] >= '0' && objFileUpdateHash.ModelID[i] <= '9'))
+                {
+                    MessageBox.Show("ModelID 输入数据不合法！", "ERROR");
+                    return;
+                }
+            }
             if (objFileUpdateHash.CustomerID.Length > 4 || objFileUpdateHash.ModelID.Length > 4 || objFileUpdateHash.ChipID.Length > 4)
             {
                 MessageBox.Show("ID 输入数据过长！","ERROR");
@@ -513,24 +651,6 @@ namespace HashKey
             }
         }
 
-        private void Textbox1_Enter(object sender, EventArgs e)
-        {
-            if (textBox_WaitCheck.Text == textbox1Note)
-            {
-                textBox_WaitCheck.Text = "";
-            }
-            textBox_WaitCheck.ForeColor = Color.Black;
-        }
-
-        private void Textbox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox_WaitCheck.Text == "")
-            {
-                textBox_WaitCheck.Text = textbox1Note;
-                textBox_WaitCheck.ForeColor = Color.LightGray;
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog objOpenFileDialog = new OpenFileDialog();
@@ -550,29 +670,44 @@ namespace HashKey
         private void button1_Click(object sender, EventArgs e)
         {
             int decimalresult = 0;
+            string tmpCb = null;
             string binaryresult = null;
-            string CustomerIp = textBox8.Text;
+            string CustomerIp = textBox8.Text.Trim();
+            Boolean checkresult = false;   
+            string sWaitCheck = textBox_WaitCheck.Text.Trim();
+
+            //数据有效性校验
+            if (CustomerIp.Length != 32)
+            {
+                label14.Text = null;
+                MessageBox.Show("CustomerIp长度应该是64！");
+                return;
+            }
             for(int i = 0; i < 4; i++)
             {
                 decimalresult = Convert.ToInt32(CustomerIp.Substring(i*8, 8), 16);
                 binaryresult += Convert.ToString(decimalresult, 2).PadLeft(32, '0');
             }
             //string callback = "";
-            Boolean checkresult = false;
-            string sWaitCheck = textBox_WaitCheck.Text;
             Dictionary<string, int> dicHash = new Dictionary<string, int>();
-            InitDictionaryForHashkey(dicHash);
-            if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)
+            InitDictionaryForHashkey(dicHash);//构造hashkey 128bit的字典
+            if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)  //更新字典value
             {
-                checkresult = CheckIPForHashkey(dicHash, sWaitCheck);
+                checkresult = CheckIPForHashkey(dicHash, sWaitCheck,ref tmpCb);
             }
             if (checkresult == true)
             {
-                textBox_CheckResult.Text = "Pass!";
+                //textBox_CheckResult.Text = "Pass!";
+                label14.Text = "Pass!";
+                label14.ForeColor = Color.Red;
             }
             else
             {
-                textBox_CheckResult.Text = "Fail!";
+                //textBox_CheckResult.Text = "Fail!";
+                label14.Text = "Fail!";
+                label14.ForeColor = Color.Red;
+                if (tmpCb != null)
+                    MessageBox.Show(tmpCb + "不存在！");
             }
             //if(callback == null)
             {
@@ -582,6 +717,57 @@ namespace HashKey
             {
                 //MessageBox.Show(callback + "不存在！");
             }
+        }
+
+        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文逗号','分开,比如：VUDU,GAAC";
+        private string textbox8_Note = "请输入32位16进制数字，比如：01102001CA0028502001030428F80000";
+        private void Textbox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox_WaitCheck.Text == textBox_WaitCheck_Note)
+            {
+                textBox_WaitCheck.Text = "";
+            }
+            textBox_WaitCheck.ForeColor = Color.Black;
+        }
+        private void Textbox8_Enter(object sender, EventArgs e)
+        {
+            if (textBox8.Text == textbox8_Note)
+            {
+                textBox8.Text = "";
+            }
+            textBox8.ForeColor = Color.Black;
+        }
+        private void Textbox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox_WaitCheck.Text == "")
+            {
+                textBox_WaitCheck.Text = textBox_WaitCheck_Note;
+                textBox_WaitCheck.ForeColor = Color.LightGray;
+            }
+        }
+        private void Textbox8_Leave(object sender, EventArgs e)
+        {
+            if (textBox8.Text == "")
+            {
+                textBox8.Text = textbox8_Note;
+                textBox8.ForeColor = Color.LightGray;
+            }
+        }
+        private void Textbox1_Enter(object sender, MouseEventArgs e)
+        {
+            if (textBox_WaitCheck.Text == textBox_WaitCheck_Note)
+            {
+                textBox_WaitCheck.Text = "";
+            }
+            textBox_WaitCheck.ForeColor = Color.Black;
+        }
+        private void Textbox8_Enter(object sender, MouseEventArgs e)
+        {
+            if (textBox8.Text == textbox8_Note)
+            {
+                textBox8.Text = "";
+            }
+            textBox8.ForeColor = Color.Black;
         }
     }
 

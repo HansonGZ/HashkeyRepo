@@ -60,6 +60,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -79,7 +80,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox_CheckResult = new System.Windows.Forms.TextBox();
             this.panTop.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -412,7 +412,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox_CheckResult);
+            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox9);
@@ -424,6 +424,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(767, 112);
             this.panel3.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(84, 15);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 25);
+            this.label14.TabIndex = 9;
             // 
             // label13
             // 
@@ -529,6 +538,9 @@
             this.textBox8.Size = new System.Drawing.Size(577, 21);
             this.textBox8.TabIndex = 2;
             this.toolTip1.SetToolTip(this.textBox8, "解释：存放生成KEY的目录路径");
+            this.textBox8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Textbox8_Enter);
+            this.textBox8.MouseLeave += new System.EventHandler(this.Textbox8_Enter);
+            this.textBox8.MouseHover += new System.EventHandler(this.Textbox8_Leave);
             // 
             // textBox_WaitCheck
             // 
@@ -537,7 +549,7 @@
             this.textBox_WaitCheck.Name = "textBox_WaitCheck";
             this.textBox_WaitCheck.Size = new System.Drawing.Size(577, 21);
             this.textBox_WaitCheck.TabIndex = 1;
-            this.textBox_WaitCheck.Enter += new System.EventHandler(this.Textbox1_Enter);
+            this.textBox_WaitCheck.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Textbox1_Enter);
             this.textBox_WaitCheck.MouseLeave += new System.EventHandler(this.Textbox1_Enter);
             this.textBox_WaitCheck.MouseHover += new System.EventHandler(this.Textbox1_Leave);
             // 
@@ -622,14 +634,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(766, 268);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            // 
-            // textBox_CheckResult
-            // 
-            this.textBox_CheckResult.Location = new System.Drawing.Point(89, 15);
-            this.textBox_CheckResult.Name = "textBox_CheckResult";
-            this.textBox_CheckResult.ReadOnly = true;
-            this.textBox_CheckResult.Size = new System.Drawing.Size(100, 21);
-            this.textBox_CheckResult.TabIndex = 8;
             // 
             // frmHashKey
             // 
@@ -718,7 +722,7 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox_CheckResult;
+        private System.Windows.Forms.Label label14;
     }
 }
 
