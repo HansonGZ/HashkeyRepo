@@ -227,6 +227,7 @@ namespace HashKey
             dicHash.Add("(None9)", 0);
             dicHash.Add("Dolby Demo(default off)", 0);
         }
+        /*
         /// <summary>
         /// 填充DataGridView
         /// <summary>
@@ -295,7 +296,7 @@ namespace HashKey
                 this.dataGridView1.Rows[0].Selected = true;
             }
         }
-
+*/
         private bool UpdateDictionaryForHashkey(Dictionary<string, int> dicHash, string value)
         {
             int i = 1;
@@ -598,9 +599,9 @@ namespace HashKey
         {
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
             InitializeComponent();
-            FillDataGridViewColums(this.dataGridView1);
+            //FillDataGridViewColums(this.dataGridView1);
         }
-
+/*
         private void butFile1_Click(object sender, EventArgs e)
         {
             OpenFileDialog objOpenFileDialog = new OpenFileDialog();
@@ -634,13 +635,13 @@ namespace HashKey
                 Cursor = Cursors.Default;
             }
         }
-
+*/
         private void butFile2_Click(object sender, EventArgs e)
         {
             OpenFileDialog objOpenFileDialog = new OpenFileDialog();
-            if (System.IO.File.Exists(this.txtEditFile1.Text))
+            if (System.IO.File.Exists(this.txtEditFile2.Text))
             {
-                objOpenFileDialog.FileName = this.txtEditFile1.Text;
+                objOpenFileDialog.FileName = this.txtEditFile2.Text;
             }
             objOpenFileDialog.Title = "请选择文件：";
             objOpenFileDialog.Filter = "(Customer_Info.h)|Customer_Info.h|Customer_Info(*.h)|*.h"; // |Excel Unicode Text File|*.txt
@@ -650,7 +651,7 @@ namespace HashKey
                 this.txtEditFile2.Text = objOpenFileDialog.FileName.Trim();
             }
         }
-
+/*
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog objOpenFileDialog = new OpenFileDialog();
@@ -666,7 +667,7 @@ namespace HashKey
                 this.textBox8.Text = objOpenFileDialog.FileName.Trim();
             }
         }
-
+*/
         private void button1_Click(object sender, EventArgs e)
         {
             int decimalresult = 0;
