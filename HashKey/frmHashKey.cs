@@ -735,7 +735,7 @@ namespace HashKey
                 if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)  //更新字典value
                 {
                     checkresult = CheckIPForHashkey(dicHash, sWaitCheck, ref tmpCbOK, ref tmpCbNG);
-                    richTextBox2.Text = PrintDictionKeyAndValue(dicHash);
+                    //richTextBox2.Text = PrintDictionKeyAndValue(dicHash);
                 }
             }
             textBox7.Text = tmpCbOK;
@@ -752,7 +752,7 @@ namespace HashKey
             }
         }
 
-        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文逗号';'分开,比如：VUDU;GAAC";
+        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文分号';'分开,比如：VUDU;GAAC";
         private string textbox8_Note = "请输入32位16进制数字，比如：01102001CA0028502001030428F80000";
         private void Textbox1_Enter(object sender, EventArgs e)
         {
