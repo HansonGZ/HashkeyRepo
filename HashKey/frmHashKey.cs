@@ -297,6 +297,16 @@ namespace HashKey
             }
         }
 */
+        private string PrintDictionKeyAndValue(Dictionary<string, int> dicHash)
+        {
+            string sPrintResult = null;
+            List<string> test = new System.Collections.Generic.List<string>(dicHash.Keys);
+            for (int i = 0; i < dicHash.Count; i++)
+            {
+                sPrintResult = sPrintResult + test[i] + ":" + dicHash[test[i]].ToString() + "   ";
+            }
+            return sPrintResult;
+        }
         private bool UpdateDictionaryForHashkey(Dictionary<string, int> dicHash, string value)
         {
             int i = 1;
@@ -331,7 +341,7 @@ namespace HashKey
         {
             bool tmpReturn = true;
             string[] sArray = tmpvalue.Split(';');
-            for (int i = sArray.Length - 1 ; i > 0; i--)
+            for (int i = sArray.Length - 1 ; i >= 0; i--)
             {
                if(dicHash[sArray[i]] == 0)
                {
@@ -563,11 +573,11 @@ namespace HashKey
         private void butUpdateFile_Click(object sender, EventArgs e)
         {
             clsHashKey objFileUpdateHash = new clsHashKey();
-            objFileUpdateHash.CustomerID = this.textBox2.Text;
-            objFileUpdateHash.ModelID = this.textBox3.Text;
-            objFileUpdateHash.ChipID = this.textBox4.Text;
-            objFileUpdateHash.CustomerIP = this.textBox5.Text;
-            objFileUpdateHash.CustomerHash = this.textBox6.Text;
+            objFileUpdateHash.CustomerID = this.textBox2.Text.Trim();
+            objFileUpdateHash.ModelID = this.textBox3.Text.Trim();
+            objFileUpdateHash.ChipID = this.textBox4.Text.Trim();
+            objFileUpdateHash.CustomerIP = this.textBox5.Text.Trim();
+            objFileUpdateHash.CustomerHash = this.textBox6.Text.Trim();
 
             //检查数据的合法性：
             for (int i = 0; i < objFileUpdateHash.CustomerID.Length; i++)
@@ -725,6 +735,7 @@ namespace HashKey
                 if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)  //更新字典value
                 {
                     checkresult = CheckIPForHashkey(dicHash, sWaitCheck, ref tmpCbOK, ref tmpCbNG);
+                    richTextBox2.Text = PrintDictionKeyAndValue(dicHash);
                 }
             }
             textBox7.Text = tmpCbOK;

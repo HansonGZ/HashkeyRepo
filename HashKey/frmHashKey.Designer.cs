@@ -99,7 +99,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlabAuthor,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 541);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(784, 23);
             this.statusStrip1.TabIndex = 10;
@@ -133,8 +133,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 539);
-            this.splitContainer1.SplitterDistance = 231;
+            this.splitContainer1.Size = new System.Drawing.Size(784, 541);
+            this.splitContainer1.SplitterDistance = 227;
             this.splitContainer1.TabIndex = 9;
             // 
             // tabControl2
@@ -145,7 +145,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(780, 227);
+            this.tabControl2.Size = new System.Drawing.Size(780, 223);
             this.tabControl2.TabIndex = 9;
             // 
             // tabPage4
@@ -164,7 +164,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(772, 201);
+            this.tabPage4.Size = new System.Drawing.Size(772, 197);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "文件更新";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -322,7 +322,7 @@
             this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage5.Size = new System.Drawing.Size(772, 201);
+            this.tabPage5.Size = new System.Drawing.Size(772, 218);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "文件校验";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -491,7 +491,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(780, 300);
+            this.tabControl1.Size = new System.Drawing.Size(780, 306);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -500,7 +500,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(772, 274);
+            this.tabPage1.Size = new System.Drawing.Size(772, 280);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "格式解读";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -513,7 +513,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(3, 3);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(766, 268);
+            this.richTextBox2.Size = new System.Drawing.Size(766, 274);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
@@ -521,7 +521,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(784, 564);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
