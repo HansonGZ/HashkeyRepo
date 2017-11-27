@@ -314,25 +314,36 @@ namespace HashKey
             return true;
         }
 
-        private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue, ref string callback)
+        private string CheckInputForHashkey(Dictionary<string, int> dicHash, string tmpWaitCheck)
         {
-            string[] sArray = tmpvalue.Split(',');
+            string sReturnstr = null;
+            string[] sArray = tmpWaitCheck.Split(';');
             for (int i = 0; i < sArray.Length; i++ )
             {
-               if(dicHash.ContainsKey(sArray[i]) == true)
+                if(dicHash.ContainsKey(sArray[i]) == false)
+                {
+                    sReturnstr = sArray[i] + ";" + sReturnstr;
+                }
+            }
+            return sReturnstr;
+        }
+        private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue, ref string cbContain, ref string cbNotContain)
+        {
+            bool tmpReturn = true;
+            string[] sArray = tmpvalue.Split(';');
+            for (int i = sArray.Length - 1 ; i > 0; i--)
+            {
+               if(dicHash[sArray[i]] == 0)
                {
-                   if(dicHash[sArray[i]] == 0)
-                   {
-                       return false;
-                   }
+                   cbNotContain = sArray[i] + ";" + cbNotContain;
+                   tmpReturn = false;
                }
                else
                {
-                   callback = sArray[i];
-                   return false;    //不存在此键值
+                   cbContain = sArray[i] + ";" + cbContain;
                }
             }
-            return true;
+            return tmpReturn;
         }
         private void UpdateHashFileByUserInput(string filename, clsHashKey tmphashkey)
         {            
@@ -671,17 +682,26 @@ namespace HashKey
         private void button1_Click(object sender, EventArgs e)
         {
             int decimalresult = 0;
-            string tmpCb = null;
+            string tmpCbOK = null;
+            string tmpCbNG = null;
             string binaryresult = null;
             string CustomerIp = textBox8.Text.Trim();
             Boolean checkresult = false;   
             string sWaitCheck = textBox_WaitCheck.Text.Trim();
-
+            string sResultForCheckInput = null;
             //数据有效性校验
             if (CustomerIp.Length != 32)
             {
                 label14.Text = null;
                 MessageBox.Show("CustomerIp长度应该是64！");
+                return;
+            }
+            if (sWaitCheck.Length == 0)
+            {
+                label14.Text = null;
+                textBox7.Text = null;
+                textBox9.Text = null;
+                MessageBox.Show("请输入校验内容！");
                 return;
             }
             for(int i = 0; i < 4; i++)
@@ -691,36 +711,37 @@ namespace HashKey
             }
             //string callback = "";
             Dictionary<string, int> dicHash = new Dictionary<string, int>();
+            
             InitDictionaryForHashkey(dicHash);//构造hashkey 128bit的字典
-            if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)  //更新字典value
+
+            sResultForCheckInput = CheckInputForHashkey(dicHash, sWaitCheck);
+
+            if (sResultForCheckInput != null)
             {
-                checkresult = CheckIPForHashkey(dicHash, sWaitCheck,ref tmpCb);
+                MessageBox.Show(sResultForCheckInput + "这些内容格式输入错误！");
             }
+            else
+            {
+                if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)  //更新字典value
+                {
+                    checkresult = CheckIPForHashkey(dicHash, sWaitCheck, ref tmpCbOK, ref tmpCbNG);
+                }
+            }
+            textBox7.Text = tmpCbOK;
+            textBox9.Text = tmpCbNG;
             if (checkresult == true)
             {
-                //textBox_CheckResult.Text = "Pass!";
                 label14.Text = "Pass!";
                 label14.ForeColor = Color.Red;
             }
             else
             {
-                //textBox_CheckResult.Text = "Fail!";
                 label14.Text = "Fail!";
                 label14.ForeColor = Color.Red;
-                if (tmpCb != null)
-                    MessageBox.Show(tmpCb + "不存在！");
-            }
-            //if(callback == null)
-            {
-                //MessageBox.Show("更新成功！");
-            }
-            //else
-            {
-                //MessageBox.Show(callback + "不存在！");
             }
         }
 
-        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文逗号','分开,比如：VUDU,GAAC";
+        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文逗号';'分开,比如：VUDU;GAAC";
         private string textbox8_Note = "请输入32位16进制数字，比如：01102001CA0028502001030428F80000";
         private void Textbox1_Enter(object sender, EventArgs e)
         {
