@@ -297,6 +297,250 @@ namespace HashKey
             }
         }
 */
+        private void FillDataGridViewColumsForHashkey(Dictionary<string, int> dicHash)
+        {
+            DataGridViewTextBoxColumn objdgvTextBoxColumnSerialNumber1 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnSerialNumber1.Name = "number1";
+            objdgvTextBoxColumnSerialNumber1.HeaderText = "Num";
+            objdgvTextBoxColumnSerialNumber1.Width = 40;
+            objdgvTextBoxColumnSerialNumber1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            objdgvTextBoxColumnSerialNumber1.DefaultCellStyle.BackColor = Color.GreenYellow;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnSerialNumber1);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnKey1 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnKey1.Name = "key1";
+            objdgvTextBoxColumnKey1.HeaderText = "Key";
+            objdgvTextBoxColumnKey1.Width = 80;
+            objdgvTextBoxColumnKey1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnKey1);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnValue1 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnValue1.Name = "value1";
+            objdgvTextBoxColumnValue1.HeaderText = "Val";
+            objdgvTextBoxColumnValue1.Width = 30;
+            objdgvTextBoxColumnValue1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnValue1);
+            
+            // Index 2
+            DataGridViewTextBoxColumn objdgvTextBoxColumnSerialNumber2 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnSerialNumber2.Name = "number2";
+            objdgvTextBoxColumnSerialNumber2.HeaderText = "Num";
+            objdgvTextBoxColumnSerialNumber2.Width = 40;
+            objdgvTextBoxColumnSerialNumber2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            objdgvTextBoxColumnSerialNumber2.DefaultCellStyle.BackColor = Color.GreenYellow;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnSerialNumber2);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnKey2 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnKey2.Name = "key2";
+            objdgvTextBoxColumnKey2.HeaderText = "Key";
+            objdgvTextBoxColumnKey2.Width = 80;
+            objdgvTextBoxColumnKey2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnKey2);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnValue2 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnValue2.Name = "value2";
+            objdgvTextBoxColumnValue2.HeaderText = "Val";
+            objdgvTextBoxColumnValue2.Width = 30;
+            objdgvTextBoxColumnValue2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnValue2);
+
+            //Index 3
+            DataGridViewTextBoxColumn objdgvTextBoxColumnSerialNumber3 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnSerialNumber3.Name = "number3";
+            objdgvTextBoxColumnSerialNumber3.HeaderText = "Num";
+            objdgvTextBoxColumnSerialNumber3.Width = 40;
+            objdgvTextBoxColumnSerialNumber3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            objdgvTextBoxColumnSerialNumber3.DefaultCellStyle.BackColor = Color.GreenYellow;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnSerialNumber3);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnKey3 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnKey3.Name = "key3";
+            objdgvTextBoxColumnKey3.HeaderText = "Key";
+            objdgvTextBoxColumnKey3.Width = 80;
+            objdgvTextBoxColumnKey3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnKey3);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnValue3 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnValue3.Name = "value3";
+            objdgvTextBoxColumnValue3.HeaderText = "Val";
+            objdgvTextBoxColumnValue3.Width = 30;
+            objdgvTextBoxColumnValue3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnValue3);
+
+
+            //Index 4
+            DataGridViewTextBoxColumn objdgvTextBoxColumnSerialNumber4 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnSerialNumber4.Name = "number4";
+            objdgvTextBoxColumnSerialNumber4.HeaderText = "Num";
+            objdgvTextBoxColumnSerialNumber4.Width = 40;
+            objdgvTextBoxColumnSerialNumber4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            objdgvTextBoxColumnSerialNumber4.DefaultCellStyle.BackColor = Color.GreenYellow;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnSerialNumber4);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnKey4 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnKey4.Name = "key4";
+            objdgvTextBoxColumnKey4.HeaderText = "Key";
+            objdgvTextBoxColumnKey4.Width = 80;
+            objdgvTextBoxColumnKey4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnKey4);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnValue4 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnValue4.Name = "value4";
+            objdgvTextBoxColumnValue4.HeaderText = "Val";
+            objdgvTextBoxColumnValue4.Width = 30;
+            objdgvTextBoxColumnValue4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnValue4);
+
+            //Index 5
+            DataGridViewTextBoxColumn objdgvTextBoxColumnSerialNumber5 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnSerialNumber5.Name = "number5";
+            objdgvTextBoxColumnSerialNumber5.HeaderText = "Num";
+            objdgvTextBoxColumnSerialNumber5.Width = 40;
+            objdgvTextBoxColumnSerialNumber5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            objdgvTextBoxColumnSerialNumber5.DefaultCellStyle.BackColor = Color.GreenYellow;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnSerialNumber5);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnKey5 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnKey5.Name = "key5";
+            objdgvTextBoxColumnKey5.HeaderText = "Key";
+            objdgvTextBoxColumnKey5.Width = 80;
+            objdgvTextBoxColumnKey5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnKey5);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnValue5 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnValue5.Name = "value5";
+            objdgvTextBoxColumnValue5.HeaderText = "Val";
+            objdgvTextBoxColumnValue5.Width = 30;
+            objdgvTextBoxColumnValue5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnValue5);
+
+            //Index 6
+            DataGridViewTextBoxColumn objdgvTextBoxColumnSerialNumber6 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnSerialNumber6.Name = "number6";
+            objdgvTextBoxColumnSerialNumber6.HeaderText = "Num";
+            objdgvTextBoxColumnSerialNumber6.Width = 40;
+            objdgvTextBoxColumnSerialNumber6.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            objdgvTextBoxColumnSerialNumber6.DefaultCellStyle.BackColor = Color.GreenYellow;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnSerialNumber6);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnKey6 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnKey6.Name = "key6";
+            objdgvTextBoxColumnKey6.HeaderText = "Key";
+            objdgvTextBoxColumnKey6.Width = 80;
+            objdgvTextBoxColumnKey6.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnKey6);
+
+            DataGridViewTextBoxColumn objdgvTextBoxColumnValue6 = new DataGridViewTextBoxColumn();
+            objdgvTextBoxColumnValue6.Name = "value6";
+            objdgvTextBoxColumnValue6.HeaderText = "Val";
+            objdgvTextBoxColumnValue6.Width = 30;
+            objdgvTextBoxColumnValue6.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns.Add(objdgvTextBoxColumnValue6);
+
+            dataGridView1.Rows.Clear();
+
+            List<string> testList = new List<string>(dicHash.Keys);
+
+            //First Row:
+            dataGridView1.Rows.Add();
+
+            DataGridViewTextBoxCell number1FirstRowNum = new DataGridViewTextBoxCell();
+            number1FirstRowNum.Value = 0;
+            DataGridViewTextBoxCell number1FirstRowKey = new DataGridViewTextBoxCell();
+            number1FirstRowKey.Value = testList[0];
+            DataGridViewTextBoxCell number1FirstRowValue = new DataGridViewTextBoxCell();
+            number1FirstRowValue.Value = dicHash[testList[0]].ToString();
+
+            DataGridViewTextBoxCell number1FirstRowLastNum = new DataGridViewTextBoxCell();
+            number1FirstRowLastNum.Value = 127;
+            DataGridViewTextBoxCell number1FirstRowLastKey = new DataGridViewTextBoxCell();
+            number1FirstRowLastKey.Value = testList[127];
+            DataGridViewTextBoxCell number1FirstRowLastValue = new DataGridViewTextBoxCell();
+            number1FirstRowLastValue.Value = dicHash[testList[127]].ToString();
+
+            dataGridView1["number1", 0] = number1FirstRowNum;
+            dataGridView1["key1", 0] = number1FirstRowKey;
+            dataGridView1["value1", 0] = number1FirstRowValue;
+
+            dataGridView1["number6", 0] = number1FirstRowLastNum;
+            dataGridView1["key6", 0] = number1FirstRowLastKey;
+            dataGridView1["value6", 0] = number1FirstRowLastValue;
+
+            dataGridView1.Rows[0].Cells[0].Selected = false;
+
+
+            for (int i = 1; i < 21; i++ )
+            {
+                int m1 = i + 20;
+                int m2 = i + 40;
+                int m3 = i + 60;
+                int m4 = i + 80;
+                int m5 = i + 100;
+                
+                dataGridView1.Rows.Add();
+                
+                DataGridViewTextBoxCell hknumber1 = new DataGridViewTextBoxCell();
+                hknumber1.Value = i.ToString();
+                DataGridViewTextBoxCell hknumber2 = new DataGridViewTextBoxCell();
+                hknumber2.Value = m1.ToString();
+                DataGridViewTextBoxCell hknumber3 = new DataGridViewTextBoxCell();
+                hknumber3.Value = m2.ToString();
+                DataGridViewTextBoxCell hknumber4 = new DataGridViewTextBoxCell();
+                hknumber4.Value = m3.ToString();
+                DataGridViewTextBoxCell hknumber5 = new DataGridViewTextBoxCell();
+                hknumber5.Value = m4.ToString();
+                DataGridViewTextBoxCell hknumber6 = new DataGridViewTextBoxCell();
+                hknumber6.Value = m5.ToString();
+
+                dataGridView1["number1", i] = hknumber1;
+                dataGridView1["number2", i] = hknumber2;
+                dataGridView1["number3", i] = hknumber3;
+                dataGridView1["number4", i] = hknumber4;
+                dataGridView1["number5", i] = hknumber5;
+                dataGridView1["number6", i] = hknumber6;
+
+                DataGridViewTextBoxCell hkkey1 = new DataGridViewTextBoxCell();
+                hkkey1.Value = testList[i];
+                DataGridViewTextBoxCell hkkey2 = new DataGridViewTextBoxCell();
+                hkkey2.Value = testList[m1];
+                DataGridViewTextBoxCell hkkey3 = new DataGridViewTextBoxCell();
+                hkkey3.Value = testList[m2];
+                DataGridViewTextBoxCell hkkey4 = new DataGridViewTextBoxCell();
+                hkkey4.Value = testList[m3];
+                DataGridViewTextBoxCell hkkey5 = new DataGridViewTextBoxCell();
+                hkkey5.Value = testList[m4];
+                DataGridViewTextBoxCell hkkey6 = new DataGridViewTextBoxCell();
+                hkkey6.Value = testList[m5];
+
+                dataGridView1["key1", i] = hkkey1;
+                dataGridView1["key2", i] = hkkey2;
+                dataGridView1["key3", i] = hkkey3;
+                dataGridView1["key4", i] = hkkey4;
+                dataGridView1["key5", i] = hkkey5;
+                dataGridView1["key6", i] = hkkey6;
+
+                DataGridViewTextBoxCell hkvalue1 = new DataGridViewTextBoxCell();
+                hkvalue1.Value = dicHash[testList[i]];
+                DataGridViewTextBoxCell hkvalue2 = new DataGridViewTextBoxCell();
+                hkvalue2.Value = dicHash[testList[m1]];
+                DataGridViewTextBoxCell hkvalue3 = new DataGridViewTextBoxCell();
+                hkvalue3.Value = dicHash[testList[m2]];
+                DataGridViewTextBoxCell hkvalue4 = new DataGridViewTextBoxCell();
+                hkvalue4.Value = dicHash[testList[m3]];
+                DataGridViewTextBoxCell hkvalue5 = new DataGridViewTextBoxCell();
+                hkvalue5.Value = dicHash[testList[m4]];
+                DataGridViewTextBoxCell hkvalue6 = new DataGridViewTextBoxCell();
+                hkvalue6.Value = dicHash[testList[m5]];
+
+
+                dataGridView1["value1", i] = hkvalue1;
+                dataGridView1["value2", i] = hkvalue2;
+                dataGridView1["value3", i] = hkvalue3;
+                dataGridView1["value4", i] = hkvalue4;
+                dataGridView1["value5", i] = hkvalue5;
+                dataGridView1["value6", i] = hkvalue6;
+            }
+        }
         private string PrintDictionKeyAndValue(Dictionary<string, int> dicHash)
         {
             string sPrintResult = null;
@@ -569,9 +813,65 @@ namespace HashKey
             }
             File.WriteAllLines(filename, allTextLines, Encoding.UTF8);  //最后写回去
         }
-
+        private string GetCustomerIpFromHkFile(string filename)
+        {
+            string CutIpHk = null;
+            string CutIpHk2 = null;
+            string strgconstIP_Cntrol_Mapping_1 = "gconstIP_Cntrol_Mapping_1";
+            string strgconstIP_Cntrol_Mapping_2 = "gconstIP_Cntrol_Mapping_2";
+            string strgconstIP_Cntrol_Mapping_3 = "gconstIP_Cntrol_Mapping_3";
+            string strgconstIP_Cntrol_Mapping_4 = "gconstIP_Cntrol_Mapping_4";
+            string[] allTextLines = File.ReadAllLines(filename, Encoding.UTF8); //读取当前文件的所有行
+            for (int j = 0; j < allTextLines.Length; j++)       //遍历每一行
+            {
+                if (allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_1) || allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_2) 
+                    || allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_3) || allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_4))
+                {
+                    for (int i = 0; i < allTextLines[j].Length; i++)
+                    {
+                        if (allTextLines[j][i] == '"')
+                        {
+                            for (int m = 1; m < 9; m++)
+                            {
+                                CutIpHk += allTextLines[j][i + m].ToString();
+                            }
+                            break;
+                        }
+                    }
+                    CutIpHk2 = CutIpHk + CutIpHk2;
+                    CutIpHk = null;
+                }
+            }
+            return CutIpHk2;
+        }
         private void butUpdateFile_Click(object sender, EventArgs e)
         {
+            string CustomerIpFromHkFile = null;
+            int decimalresult = 0;
+            string binaryresult = null;
+            if(txtEditFile2.Text.Trim() == "")
+            {
+                MessageBox.Show("更新前请先打开文件！");
+                return;
+            }
+
+            CustomerIpFromHkFile = GetCustomerIpFromHkFile(this.txtEditFile2.Text.Trim());
+
+            Dictionary<string, int> dicHash1 = new Dictionary<string, int>();
+
+            InitDictionaryForHashkey(dicHash1);//构造hashkey 128bit的字典
+
+            for (int i = 0; i < 4; i++)
+            {
+                decimalresult = Convert.ToInt32(CustomerIpFromHkFile.Substring(i * 8, 8), 16);
+                binaryresult += Convert.ToString(decimalresult, 2).PadLeft(32, '0');
+            }
+
+            if (UpdateDictionaryForHashkey(dicHash1, binaryresult) == true)
+            {
+                FillDataGridViewColumsForHashkey(dicHash1);
+            }
+
             clsHashKey objFileUpdateHash = new clsHashKey();
             objFileUpdateHash.CustomerID = this.textBox2.Text.Trim();
             objFileUpdateHash.ModelID = this.textBox3.Text.Trim();
@@ -612,7 +912,7 @@ namespace HashKey
                 return;
             }
 
-            UpdateHashFileByUserInput(this.txtEditFile2.Text, objFileUpdateHash);    //根据user填的数据来更新目标文件
+            UpdateHashFileByUserInput(this.txtEditFile2.Text.Trim(), objFileUpdateHash);    //根据user填的数据来更新目标文件
 
             MessageBox.Show("更新成功！");
         }
@@ -699,6 +999,8 @@ namespace HashKey
             Boolean checkresult = false;   
             string sWaitCheck = textBox_WaitCheck.Text.Trim();
             string sResultForCheckInput = null;
+
+     
             //数据有效性校验
             if (CustomerIp.Length != 32)
             {
@@ -719,7 +1021,7 @@ namespace HashKey
                 decimalresult = Convert.ToInt32(CustomerIp.Substring(i*8, 8), 16);
                 binaryresult += Convert.ToString(decimalresult, 2).PadLeft(32, '0');
             }
-            //string callback = "";
+
             Dictionary<string, int> dicHash = new Dictionary<string, int>();
             
             InitDictionaryForHashkey(dicHash);//构造hashkey 128bit的字典
@@ -735,7 +1037,12 @@ namespace HashKey
                 if (UpdateDictionaryForHashkey(dicHash, binaryresult) == true)  //更新字典value
                 {
                     checkresult = CheckIPForHashkey(dicHash, sWaitCheck, ref tmpCbOK, ref tmpCbNG);
+                    FillDataGridViewColumsForHashkey(dicHash);
                     //richTextBox2.Text = PrintDictionKeyAndValue(dicHash);
+                }
+                else
+                {
+                    checkresult = false;
                 }
             }
             textBox7.Text = tmpCbOK;
@@ -752,7 +1059,7 @@ namespace HashKey
             }
         }
 
-        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文分号';'分开,比如：VUDU;GAAC";
+        private string textBox_WaitCheck_Note = "请输入待校验的字节，以英文逗号';'分开,比如：VUDU;GAAC";
         private string textbox8_Note = "请输入32位16进制数字，比如：01102001CA0028502001030428F80000";
         private void Textbox1_Enter(object sender, EventArgs e)
         {
