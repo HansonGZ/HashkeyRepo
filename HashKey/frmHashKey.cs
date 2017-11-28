@@ -8,14 +8,12 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace HashKey
 {
     public partial class frmHashKey : Form
     {
-        private clsHashKeyList gobjHashKeyList;
+        //private clsHashKeyList gobjHashKeyList;
 
         System.Reflection.Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
@@ -544,7 +542,7 @@ namespace HashKey
         private string PrintDictionKeyAndValue(Dictionary<string, int> dicHash)
         {
             string sPrintResult = null;
-            List<string> test = new System.Collections.Generic.List<string>(dicHash.Keys);
+            List<string> test = new List<string>(dicHash.Keys);
             for (int i = 0; i < dicHash.Count; i++)
             {
                 sPrintResult = sPrintResult + test[i] + ":" + dicHash[test[i]].ToString() + "   ";
@@ -558,7 +556,7 @@ namespace HashKey
             {
                 return false;
             }
-            List<string> Templist = new System.Collections.Generic.List<string>();
+            List<string> Templist = new List<string>();
             Templist.AddRange(dicHash.Keys);
             foreach (string t in Templist)
             {
@@ -571,10 +569,11 @@ namespace HashKey
         private string CheckInputForHashkey(Dictionary<string, int> dicHash, string tmpWaitCheck)
         {
             string sReturnstr = null;
-            string[] sArray = tmpWaitCheck.Split(';');
+            //string[] sArray = tmpWaitCheck.Split(';');
+            string[] sArray = tmpWaitCheck.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < sArray.Length; i++ )
             {
-                if(dicHash.ContainsKey(sArray[i]) == false)
+                if(dicHash.ContainsKey(sArray[i].Trim()) == false)
                 {
                     sReturnstr = sArray[i] + ";" + sReturnstr;
                 }
@@ -584,18 +583,27 @@ namespace HashKey
         private bool CheckIPForHashkey(Dictionary<string, int> dicHash, string tmpvalue, ref string cbContain, ref string cbNotContain)
         {
             bool tmpReturn = true;
-            string[] sArray = tmpvalue.Split(';');
+            string[] sArray = tmpvalue.Split(new char[] {';'}, StringSplitOptions.RemoveEmptyEntries);
+            //string[] sArray = tmpvalue.Split(';');
             for (int i = sArray.Length - 1 ; i >= 0; i--)
             {
-               if(dicHash[sArray[i]] == 0)
+               if (dicHash.ContainsKey(sArray[i].Trim()))
                {
-                   cbNotContain = sArray[i] + ";" + cbNotContain;
-                   tmpReturn = false;
+                   if (dicHash[sArray[i].Trim()] == 0)
+                   {
+                       cbNotContain = sArray[i].Trim() + ";" + cbNotContain;
+                       tmpReturn = false;
+                   }
+                   else
+                   {
+                       cbContain = sArray[i].Trim() + ";" + cbContain;
+                   }
                }
                else
                {
-                   cbContain = sArray[i] + ";" + cbContain;
+                   tmpReturn = false;
                }
+
             }
             return tmpReturn;
         }
@@ -838,7 +846,7 @@ namespace HashKey
                             break;
                         }
                     }
-                    CutIpHk2 = CutIpHk + CutIpHk2;
+                    CutIpHk2 = CutIpHk2 + CutIpHk;
                     CutIpHk = null;
                 }
             }
@@ -972,23 +980,7 @@ namespace HashKey
                 this.txtEditFile2.Text = objOpenFileDialog.FileName.Trim();
             }
         }
-/*
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog objOpenFileDialog = new OpenFileDialog();
-            if (System.IO.File.Exists(this.txtEditFile1.Text))
-            {
-                objOpenFileDialog.FileName = this.txtEditFile1.Text;
-            }
-            objOpenFileDialog.Title = "请选择文件：";
-            objOpenFileDialog.Filter = "(Customer_Info.h)|Customer_Info.h|Customer_Info(*.h)|*.h"; // |Excel Unicode Text File|*.txt
-            objOpenFileDialog.DefaultExt = ".h";
-            if (objOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                this.textBox8.Text = objOpenFileDialog.FileName.Trim();
-            }
-        }
-*/
+
         private void button1_Click(object sender, EventArgs e)
         {
             int decimalresult = 0;
@@ -1005,7 +997,7 @@ namespace HashKey
             if (CustomerIp.Length != 32)
             {
                 label14.Text = null;
-                MessageBox.Show("CustomerIp长度应该是64！");
+                MessageBox.Show("CustomerIp长度应该是32！");
                 return;
             }
             if (sWaitCheck.Length == 0)
@@ -1026,11 +1018,11 @@ namespace HashKey
             
             InitDictionaryForHashkey(dicHash);//构造hashkey 128bit的字典
 
-            sResultForCheckInput = CheckInputForHashkey(dicHash, sWaitCheck);
+            sResultForCheckInput = CheckInputForHashkey(dicHash, sWaitCheck);   //检查输入的待校验字符串是否准确
 
             if (sResultForCheckInput != null)
             {
-                MessageBox.Show(sResultForCheckInput + "这些内容格式输入错误！");
+                MessageBox.Show(sResultForCheckInput + "这些内容格式输入错误，请确认格式是否正确！");
             }
             else
             {
