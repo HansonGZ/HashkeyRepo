@@ -730,7 +730,7 @@ namespace HashKey
                     }
                     if (tmphashkey.CustomerIP != string.Empty)
                     {
-                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP, 4));
+                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP, 1));
                     }
                 }
                 else if (allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_2))
@@ -749,7 +749,7 @@ namespace HashKey
                     }
                     if (tmphashkey.CustomerIP != string.Empty)
                     {
-                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP,3));
+                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP,2));
                     }
                 }
                 else if (allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_3))
@@ -768,7 +768,7 @@ namespace HashKey
                     }
                     if (tmphashkey.CustomerIP != string.Empty)
                     {
-                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP, 2));
+                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP, 3));
                     }
                 }
                 else if (allTextLines[j].Contains(strgconstIP_Cntrol_Mapping_4))
@@ -787,7 +787,7 @@ namespace HashKey
                     }
                     if (tmphashkey.CustomerIP != string.Empty)
                     {
-                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP, 1));
+                        allTextLines[j] = allTextLines[j].Replace(tmpstr, tmphashkey.FormatCustomerIP(tmphashkey.CustomerIP, 4));
                     }
                 }
                 else if (allTextLines[j].Contains(strgconstCustomer_hash))
