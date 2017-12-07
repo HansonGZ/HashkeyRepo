@@ -857,6 +857,7 @@ namespace HashKey
             string CustomerIpFromHkFile = null;
             int decimalresult = 0;
             string binaryresult = null;
+            //this.tabPage5.Parent = this.tabControl2;
             if(txtEditFile2.Text.Trim() == "")
             {
                 MessageBox.Show("更新前请先打开文件！");
@@ -928,6 +929,7 @@ namespace HashKey
         {
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(CurrentDomain_AssemblyResolve);
             InitializeComponent();
+            this.tabPage5.Parent = null;
             //FillDataGridViewColums(this.dataGridView1);
         }
 /*
