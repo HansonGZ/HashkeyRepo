@@ -152,7 +152,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Size = new System.Drawing.Size(1045, 653);
-            this.splitContainer1.SplitterDistance = 277;
+            this.splitContainer1.SplitterDistance = 276;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -165,7 +165,7 @@
             this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1041, 273);
+            this.tabControl2.Size = new System.Drawing.Size(1041, 272);
             this.tabControl2.TabIndex = 9;
             // 
             // tabPage4
@@ -185,7 +185,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage4.Size = new System.Drawing.Size(1033, 244);
+            this.tabPage4.Size = new System.Drawing.Size(1033, 243);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "文件更新";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -357,7 +357,7 @@
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage5.Size = new System.Drawing.Size(1033, 272);
+            this.tabPage5.Size = new System.Drawing.Size(1033, 243);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "文件校验";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -528,7 +528,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 367);
+            this.tabControl1.Size = new System.Drawing.Size(1041, 368);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -539,7 +539,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 338);
+            this.tabPage1.Size = new System.Drawing.Size(1033, 339);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "格式解读";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -564,7 +564,7 @@
             this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(1025, 330);
+            this.richTextBox2.Size = new System.Drawing.Size(1025, 331);
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
@@ -613,6 +613,7 @@
             this.打开校验窗口ToolStripMenuItem.Name = "打开校验窗口ToolStripMenuItem";
             this.打开校验窗口ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.打开校验窗口ToolStripMenuItem.Text = "打开校验窗口";
+            this.打开校验窗口ToolStripMenuItem.Click += new System.EventHandler(this.打开校验窗口ToolStripMenuItem_Click);
             // 
             // frmHashKey
             // 
@@ -662,7 +663,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox txtEditFile2;
         private System.Windows.Forms.Button butFile2;
@@ -679,7 +679,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button butUpdateFile;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TextBox textBox_WaitCheck;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
@@ -708,6 +707,8 @@
         private System.Windows.Forms.HelpProvider helpProvider3;
         private System.Windows.Forms.HelpProvider helpProvider4;
         private System.Windows.Forms.HelpProvider helpProvider5;
+        public System.Windows.Forms.TabControl tabControl2;
+        public System.Windows.Forms.TabPage tabPage5;
     }
 }
 

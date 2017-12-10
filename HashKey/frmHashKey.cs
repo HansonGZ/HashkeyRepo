@@ -1103,6 +1103,13 @@ namespace HashKey
             }
             textBox8.ForeColor = Color.Black;
         }
+
+        private void 打开校验窗口ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 myForm = new Form1();
+            myForm.GetForm1(this);
+            myForm.Show();
+        }
     }
 
 }
