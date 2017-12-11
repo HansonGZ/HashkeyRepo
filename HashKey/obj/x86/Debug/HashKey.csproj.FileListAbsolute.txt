@@ -46,3 +46,4 @@ D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.csproj.GenerateRes
 D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.exe
 D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.pdb
 D:\MyGit\Hashkey\hashkeygit\HashKey\obj\x86\Debug\HashKey.Form1.resources
+D:\MyGit\HashkeyGit\HashkeyRepo\HashKey\obj\x86\Debug\HashKey.Form1.resources
