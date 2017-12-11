@@ -130,7 +130,7 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(765, 19);
             this.toolStripStatusLabel1.Spring = true;
-            this.toolStripStatusLabel1.Text = "[Hash Key辅助分析工具][版本: V1.1]";
+            this.toolStripStatusLabel1.Text = "[Hash Key辅助分析工具][版本: V1.1.1]";
             this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // splitContainer1
